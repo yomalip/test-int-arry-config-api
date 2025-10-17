@@ -4,7 +4,7 @@ import ballerina/log;
 configurable int dbPort = 9090;
 configurable string message = "name should not be empty!";
 configurable string input = ?;
-configurable PushNotification pushNotification = ?;
+configurable PushNotification[] pushNotifications = ?;
 
 type PushNotification record {|
     string appName;
@@ -24,8 +24,8 @@ service / on new http:Listener(dbPort) {
         if name is "" {
             return error(message);
         }
-        log:printInfo("Push Notification App: " + pushNotification.appName);
-        log:printInfo("Runs on days: " + pushNotification.runDays.toJsonString());
+        log:printInfo("Push Notification App: " + pushNotifications[0].appName);
+        log:printInfo("Runs on days: " + pushNotifications[0].runDays.toJsonString());
         return "Hello, " + name + "!" + input;
     }
 }

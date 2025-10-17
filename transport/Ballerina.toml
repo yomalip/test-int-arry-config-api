@@ -2,7 +2,7 @@
 org = "rolandh"
 name = "transport"
 version = "0.1.0"
-distribution = "2201.8.4"
+distribution = "2201.12.10"
 
 [build-options]
 observabilityIncluded = true

@@ -12,6 +12,10 @@ type PushNotification record {|
     boolean isEnabled;
 |}; 
 
+configurable int[] myNumbers = ?;
+
+
+
 # A service representing a network-accessible API
 # bound to port `9090`.
 service / on new http:Listener(dbPort) {
@@ -26,6 +30,7 @@ service / on new http:Listener(dbPort) {
         }
         log:printInfo("Push Notification App: " + pushNotifications[0].appName);
         log:printInfo("Runs on days: " + pushNotifications[0].runDays.toJsonString());
+        log:printInfo("Int array " + myNumbers);
         return "Hello, " + name + "!" + input;
     }
 }

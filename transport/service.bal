@@ -30,7 +30,7 @@ service / on new http:Listener(dbPort) {
         }
         log:printInfo("Push Notification App: " + pushNotifications[0].appName);
         log:printInfo("Runs on days: " + pushNotifications[0].runDays.toJsonString());
-        log:printInfo("Int array " + myNumbers[0]);
+        log:printInfo("Int array " + myNumbers.toJsonString());
         return "Hello, " + name + "!" + input;
     }
 }
